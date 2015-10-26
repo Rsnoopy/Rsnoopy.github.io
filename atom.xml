@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[R`Blog]]></title>
+  <subtitle><![CDATA[Rshilu]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="https://rsnoopy.github.io/"/>
+  <updated>2015-10-26T12:26:11.687Z</updated>
+  <id>https://rsnoopy.github.io/</id>
+  
+  <author>
+    <name><![CDATA[R]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[使用GitHub搭建Hexo静态博客]]></title>
+    <link href="https://rsnoopy.github.io/post/hexo/"/>
+    <id>https://rsnoopy.github.io/post/hexo/</id>
+    <published>2015-10-25T15:50:07.000Z</published>
+    <updated>2015-10-26T12:26:11.687Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://i.imgur.com/eme4k0e.png" alt=""><br><a id="more"></a></p>
+<h1 id="前言"><strong>前言</strong></h1><hr>
+<h1 id="Hexo介绍"><strong>Hexo介绍</strong></h1><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a>是一款基于Node.js的快速、简洁且高效的静态博客框架。Hexo使用Markdown（或其他渲染引擎）解析文章，几乎可以实现在几秒内生成静态网页。</p>
+<p><img src="http://i.imgur.com/vHWvS9y.png" alt=""></p>
+<h1 id="环境搭建"><strong>环境搭建</strong></h1><h2 id="安装GitHub">安装GitHub</h2><p><a href="https://windows.github.com/" target="_blank" rel="external">GitHub for Windows</a><br>软件不大，但是下载过程艰难，当初安装GitHub for Windows各种被网络中断。</p>
+<h3 id="配置GitHub">配置GitHub</h3><p>注册<a href="https://github.com/" target="_blank" rel="external">GitHub</a>，注册时用户名如<code>rsnoopy</code>。</p>
+<p>登陆并且通过邮箱验证后，在 <code>Your repositories</code>处创建一个<code>New repository</code>。</p>
+<p>注意：<code>Repository name</code>必须和用户名一致，格式如<code>rsnoopy.github.io</code></p>
+<p>创建完成后，你的静态主页为<a href="https://rsnoopy.github.io/">https://rsnoopy.github.io/</a>，此时主页还没有任何内容。</p>
+<p>打开桌面GitHub并登陆，设置好默认路径后，将你的<code>repository</code>克隆过来。点击左上角+后，选择Clone便可以看到你创建的<code>repository</code>。</p>
+<h2 id="安装Node-JS">安装Node.JS</h2><p><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.JS</a><br>这个直接安装，Easy。</p>
+<h2 id="安装Hexo">安装Hexo</h2><p>在配置好GItHub并安装好Node.JS后，双击桌面的<code>Git Shell</code>，输入如下命令即可完成安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo --save</span><br></pre></td></tr></table></figure>
+<h1 id="配置Hexo"><strong>配置Hexo</strong></h1><h2 id="Hexo目录">Hexo目录</h2><p>安装完成后，可以根据自己的喜好建立Hexo目录（如：<code>E:\Blog</code>），打开<code>Git Shell</code>。执行如下命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> e:\B<span class="built_in">log</span></span><br><span class="line">%<span class="built_in">cd</span> &lt;folder&gt; 切换到建立的Hexo目录下</span><br><span class="line">hexo init</span><br><span class="line">hexo install</span><br></pre></td></tr></table></figure>
+<h2 id="安装Hexo插件">安装Hexo插件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-archive --save</span><br><span class="line">npm install hexo-generator-category --save</span><br><span class="line">npm install hexo-generator-tag --save</span><br><span class="line">npm install hexo-server --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-deployer-heroku --save</span><br><span class="line">npm install hexo-deployer-rsync --save</span><br><span class="line">npm install hexo-deployer-openshift --save</span><br><span class="line">npm install hexo-renderer-marked@<span class="number">0.2</span> --save</span><br><span class="line">npm install hexo-renderer-stylus@<span class="number">0.2</span> --save</span><br><span class="line">npm install hexo-generator-feed@<span class="number">1</span> --save</span><br><span class="line">npm install hexo-generator-sitemap@<span class="number">1</span> --save</span><br></pre></td></tr></table></figure>
+<h2 id="调试">调试</h2><p>如果需要本地预览或者调试，可以使用下面的命令启动本地服务器，然后使用浏览器打开localhost:4000查看效果。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<h1 id="部署GitHub"><strong>部署GitHub</strong></h1><p>将静态网页部署到GitHub前需要对Hexo目录下的<code>_config.yml</code>文件进行配置。</p>
+<p>注意：部署时记得把Rsnoopy替换成你的账户名。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	<span class="built_in">type</span>: git</span><br><span class="line">	repository: git@github.com:Rsnoopy/Rsnoopy.github.io.git</span><br><span class="line">	branch: master</span><br></pre></td></tr></table></figure>
+<p>之后执行下列指令即可完成部署，注意部署会覆盖掉你之前存放的文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>Hexo在执行<code>hexo generate</code>时会在本地把博客的一套静态站点生成放在Hexo目录下的<code>public</code>文件夹中，在执行<code>hexo deploy</code>时将<code>public</code>文件夹复制到<code>.deploy_git</code>文件夹中，同步到GitHub上。之后便可以访问静态主页<a href="https://rsnoopy.github.io/">https://rsnoopy.github.io/</a>。</p>
+<h1 id="Tips"><strong>Tips</strong></h1><ol>
+<li>每次修改本地文件后，需要hexo generate才能保存。每次使用命令时，都要在Hexo目录下。</li>
+<li>Hexo现在支持更加简单的命令格式了，比如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo g == hexo generate   </span><br><span class="line">hexo d == hexo deploy   </span><br><span class="line">hexo s == hexo server   </span><br><span class="line">hexo n == hexo new</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://i.imgur.com/eme4k0e.png" alt=""><br>]]>
+    
+    </summary>
+    
+      <category term="Hexo" scheme="https://rsnoopy.github.io/tags/Hexo/"/>
+    
+      <category term="Hexo" scheme="https://rsnoopy.github.io/categories/Hexo/"/>
+    
+  </entry>
+  
+</feed>

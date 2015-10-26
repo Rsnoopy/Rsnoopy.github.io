@@ -1,0 +1,456 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>使用GitHub搭建Hexo静态博客 | R`Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="R">
+    
+
+    
+    <meta name="description">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用GitHub搭建Hexo静态博客">
+<meta property="og:url" content="https://rsnoopy.github.io/post/hexo/index.html">
+<meta property="og:site_name" content="R`Blog">
+<meta property="og:description">
+<meta property="og:image" content="http://i.imgur.com/eme4k0e.png">
+<meta property="og:image" content="http://i.imgur.com/vHWvS9y.png">
+<meta property="og:updated_time" content="2015-10-26T12:26:11.687Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用GitHub搭建Hexo静态博客">
+<meta name="twitter:description">
+<meta name="twitter:creator" content="@R_ShiLu">
+
+    
+    
+    <link rel="icon" href="/img/R.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/R.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/R.png">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/R.png" alt="R`Blog" title="R`Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="R`Blog">R`Blog</a></h1>
+				<h2 class="blog-motto">Rshilu</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/categories">Category</a></li>
+					
+						<li><a href="/tags">Tags</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:rsnoopy.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/post/hexo/" title="使用GitHub搭建Hexo静态博客" itemprop="url">使用GitHub搭建Hexo静态博客</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="R" target="_blank" itemprop="author">R</a>
+		
+  <p class="article-time">
+    <time datetime="2015-10-25T15:50:07.000Z" itemprop="datePublished"> 发表于 2015-10-25</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<p><img src="http://i.imgur.com/eme4k0e.png" alt=""><br><a id="more"></a></p>
+<h1 id="前言"><strong>前言</strong></h1><hr>
+<h1 id="Hexo介绍"><strong>Hexo介绍</strong></h1><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a>是一款基于Node.js的快速、简洁且高效的静态博客框架。Hexo使用Markdown（或其他渲染引擎）解析文章，几乎可以实现在几秒内生成静态网页。</p>
+<p><img src="http://i.imgur.com/vHWvS9y.png" alt=""></p>
+<h1 id="环境搭建"><strong>环境搭建</strong></h1><h2 id="安装GitHub">安装GitHub</h2><p><a href="https://windows.github.com/" target="_blank" rel="external">GitHub for Windows</a><br>软件不大，但是下载过程艰难，当初安装GitHub for Windows各种被网络中断。</p>
+<h3 id="配置GitHub">配置GitHub</h3><p>注册<a href="https://github.com/" target="_blank" rel="external">GitHub</a>，注册时用户名如<code>rsnoopy</code>。</p>
+<p>登陆并且通过邮箱验证后，在 <code>Your repositories</code>处创建一个<code>New repository</code>。</p>
+<p>注意：<code>Repository name</code>必须和用户名一致，格式如<code>rsnoopy.github.io</code></p>
+<p>创建完成后，你的静态主页为<a href="https://rsnoopy.github.io/">https://rsnoopy.github.io/</a>，此时主页还没有任何内容。</p>
+<p>打开桌面GitHub并登陆，设置好默认路径后，将你的<code>repository</code>克隆过来。点击左上角+后，选择Clone便可以看到你创建的<code>repository</code>。</p>
+<h2 id="安装Node-JS">安装Node.JS</h2><p><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.JS</a><br>这个直接安装，Easy。</p>
+<h2 id="安装Hexo">安装Hexo</h2><p>在配置好GItHub并安装好Node.JS后，双击桌面的<code>Git Shell</code>，输入如下命令即可完成安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo --save</span><br></pre></td></tr></table></figure>
+<h1 id="配置Hexo"><strong>配置Hexo</strong></h1><h2 id="Hexo目录">Hexo目录</h2><p>安装完成后，可以根据自己的喜好建立Hexo目录（如：<code>E:\Blog</code>），打开<code>Git Shell</code>。执行如下命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> e:\B<span class="built_in">log</span></span><br><span class="line">%<span class="built_in">cd</span> &lt;folder&gt; 切换到建立的Hexo目录下</span><br><span class="line">hexo init</span><br><span class="line">hexo install</span><br></pre></td></tr></table></figure>
+<h2 id="安装Hexo插件">安装Hexo插件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-archive --save</span><br><span class="line">npm install hexo-generator-category --save</span><br><span class="line">npm install hexo-generator-tag --save</span><br><span class="line">npm install hexo-server --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-deployer-heroku --save</span><br><span class="line">npm install hexo-deployer-rsync --save</span><br><span class="line">npm install hexo-deployer-openshift --save</span><br><span class="line">npm install hexo-renderer-marked@<span class="number">0.2</span> --save</span><br><span class="line">npm install hexo-renderer-stylus@<span class="number">0.2</span> --save</span><br><span class="line">npm install hexo-generator-feed@<span class="number">1</span> --save</span><br><span class="line">npm install hexo-generator-sitemap@<span class="number">1</span> --save</span><br></pre></td></tr></table></figure>
+<h2 id="调试">调试</h2><p>如果需要本地预览或者调试，可以使用下面的命令启动本地服务器，然后使用浏览器打开localhost:4000查看效果。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<h1 id="部署GitHub"><strong>部署GitHub</strong></h1><p>将静态网页部署到GitHub前需要对Hexo目录下的<code>_config.yml</code>文件进行配置。</p>
+<p>注意：部署时记得把Rsnoopy替换成你的账户名。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	<span class="built_in">type</span>: git</span><br><span class="line">	repository: git@github.com:Rsnoopy/Rsnoopy.github.io.git</span><br><span class="line">	branch: master</span><br></pre></td></tr></table></figure>
+<p>之后执行下列指令即可完成部署，注意部署会覆盖掉你之前存放的文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>Hexo在执行<code>hexo generate</code>时会在本地把博客的一套静态站点生成放在Hexo目录下的<code>public</code>文件夹中，在执行<code>hexo deploy</code>时将<code>public</code>文件夹复制到<code>.deploy_git</code>文件夹中，同步到GitHub上。之后便可以访问静态主页<a href="https://rsnoopy.github.io/">https://rsnoopy.github.io/</a>。</p>
+<h1 id="Tips"><strong>Tips</strong></h1><ol>
+<li>每次修改本地文件后，需要hexo generate才能保存。每次使用命令时，都要在Hexo目录下。</li>
+<li>Hexo现在支持更加简单的命令格式了，比如：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo g == hexo generate   </span><br><span class="line">hexo d == hexo deploy   </span><br><span class="line">hexo s == hexo server   </span><br><span class="line">hexo n == hexo new</span><br></pre></td></tr></table></figure>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Hexo/">Hexo</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="https://rsnoopy.github.io/post/hexo/" data-title="使用GitHub搭建Hexo静态博客 | R`Blog" data-tsina="undefined" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="post/hexo/" data-title="使用GitHub搭建Hexo静态博客" data-url="https://rsnoopy.github.io/post/hexo/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo介绍"><span class="toc-number">2.</span> <span class="toc-text">Hexo介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#环境搭建"><span class="toc-number">3.</span> <span class="toc-text">环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装GitHub"><span class="toc-number">3.1.</span> <span class="toc-text">安装GitHub</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置GitHub"><span class="toc-number">3.1.1.</span> <span class="toc-text">配置GitHub</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Node-JS"><span class="toc-number">3.2.</span> <span class="toc-text">安装Node.JS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Hexo"><span class="toc-number">3.3.</span> <span class="toc-text">安装Hexo</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置Hexo"><span class="toc-number">4.</span> <span class="toc-text">配置Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo目录"><span class="toc-number">4.1.</span> <span class="toc-text">Hexo目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Hexo插件"><span class="toc-number">4.2.</span> <span class="toc-text">安装Hexo插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#调试"><span class="toc-number">4.3.</span> <span class="toc-text">调试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署GitHub"><span class="toc-number">5.</span> <span class="toc-text">部署GitHub</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Tips"><span class="toc-number">6.</span> <span class="toc-text">Tips</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m R. <br/>
+			Experence worth spreading!</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/Rsnoopy" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		<a href="https://twitter.com/R_ShiLu" target="_blank" class="icon-twitter" title="twitter"></a>
+		
+		
+		
+		
+		
+		<a href="http://www.zhihu.com/people/Rsnoopy" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		
+		<a href="mailto:snoopyshilu@163.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="R">R</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"Rsnoopy"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

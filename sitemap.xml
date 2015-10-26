@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://rsnoopy.github.io/post/hexo/</loc>
+    <lastmod>2015-10-26T12:26:11.687Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rsnoopy.github.io/tags/index.html</loc>
+    <lastmod>2015-10-25T07:16:47.784Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rsnoopy.github.io/categories/index.html</loc>
+    <lastmod>2015-10-25T07:16:19.050Z</lastmod>
+  </url>
+  
+</urlset>
